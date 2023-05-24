@@ -1,6 +1,5 @@
 import { Router } from 'express'
 import { Todo } from '../models/todos'
-import { todo } from 'node:test';
 
 const router = Router()
 
@@ -8,8 +7,10 @@ type ToDO = { todo: string; completed: boolean }
 
 let todos: Todo[] = []
 
-router.get('/', (req,res,next) => {
-    res.status(200).json({todos})
+router.get('/', (req, res, next) => {
+
+    res.status(200).json({ todos })
+
 })
 
 router.post('/', (req, res, next) => {

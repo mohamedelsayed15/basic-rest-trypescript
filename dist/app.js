@@ -8,7 +8,10 @@ const express_1 = __importDefault(require("express")); // enables auto completio
 const todos_1 = __importDefault(require("./routes/todos"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
+var log = console.log;
 app.use(body_parser_1.default.json());
 //app.use(express.json({ limit: '1kb' }))
 app.use(todos_1.default);
-app.listen(3000);
+app.listen(process.env.PORT, () => {
+    console.log(process.env.PORT);
+});

@@ -7,9 +7,14 @@ import bodyParser from 'body-parser'
 
 const app = express()
 
+
+var log = console.log
+
 app.use(bodyParser.json())
 //app.use(express.json({ limit: '1kb' }))
 app.use(todosRoutes)
 
 
-app.listen(3000)
+app.listen(process.env.PORT, () => {
+    console.log(process.env.PORT)
+})
